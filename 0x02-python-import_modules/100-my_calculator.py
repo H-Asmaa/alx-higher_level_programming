@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import calculator_1
+    import calculator_1 as cal
     import sys
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
@@ -9,12 +9,12 @@ if __name__ == "__main__":
         a = int(sys.argv[1])
         b = int(sys.argv[3])
         if sys.argv[2] == "+":
-            print("{} + {} = {}".format(a, b, a + b))
+            print("{} + {} = {}".format(a, b, cal(a, b)))
         elif sys.argv[2] == "-":
-            print("{} - {} = {}".format(a, b, a - b))
+            print("{} - {} = {}".format(a, b, cal(a, b)))
         elif sys.argv[2] == "*":
-            print("{} * {} = {}".format(a, b, a * b))
+            print("{} * {} = {}".format(a, b, cal(a, b)))
         elif sys.argv[2] == "/":
-            print("{} / {} = {}".format(a, b, a / b))
+            print("{} / {} = {}".format(a, b, cal(a, b)))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
