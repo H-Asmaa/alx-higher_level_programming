@@ -38,21 +38,15 @@ int is_palindrome(listint_t **head)
 		len++;
 		current = current->next;
 	}
-
 	if (len <= 1)
 		return (1);
-
 	current = *head;
-
 	for (i = 0; i < len / 2; i++)
 	{
 		current = current->next;
 	}
-
 	reversed = reverseLinkedList(current);
-
 	current = *head;
-
 	while (reversed != NULL)
 	{
 		if (current->n != reversed->n)
@@ -61,6 +55,5 @@ int is_palindrome(listint_t **head)
 		current = current->next;
 		reversed = reversed->next;
 	}
-
 	return (1);
 }
