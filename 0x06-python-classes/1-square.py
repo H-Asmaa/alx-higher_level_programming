@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 class Square:
-    
+    __size = None
+    def __init__(self, size):
+        self
 
 my_square = Square(3)
 print(type(my_square))
