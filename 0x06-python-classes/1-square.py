@@ -1,19 +1,10 @@
 #!/usr/bin/python3
+"""Completing the class Square"""
+
+
 class Square:
+    """Class Square with Private instance attribute: size"""
     __size = None
+
     def __init__(self, size):
-        self
-
-my_square = Square(3)
-print(type(my_square))
-print(my_square.__dict__)
-
-try:
-    print(my_square.size)
-except Exception as e:
-    print(e)
-
-try:
-    print(my_square.__size)
-except Exception as e:
-    print(e)
+        self.__size = size
