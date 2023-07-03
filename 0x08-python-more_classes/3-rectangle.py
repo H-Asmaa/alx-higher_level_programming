@@ -20,10 +20,8 @@ class Rectangle:
     Instantiation with optional width and height:
     def __init__(self, width=0, height=0):
     Public instance method: def area(self): that returns the rectangle area
-        Public instance method: def perimeter(self): that returns perimeter:
-                - if width or height is equal to 0, perimeter is equal to 0
-    print() and str() should print the rectangle with the character #:
-                - if width or height is equal to 0, return an empty string
+	Public instance method: def perimeter(self): that returns the rectangle perimeter:
+		- if width or height is equal to 0, perimeter is equal to 0
     """
     __width = None
     __height = None
