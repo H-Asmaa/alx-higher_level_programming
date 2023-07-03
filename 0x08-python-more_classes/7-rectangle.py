@@ -18,9 +18,13 @@ class Rectangle:
     Private instance attribute: height:
                 same thing goes exactly as width.
     Public class attribute number_of_instances:
-		- Initialized to 0
-		- Incremented during each new instance instantiation
-		- Decremented during each instance deletion
+                - Initialized to 0
+                - Incremented during each new instance instantiation
+                - Decremented during each instance deletion
+    Public class attribute print_symbol:
+                - Initialized to #
+                - Used as symbol for string representation
+                - Can be any type
     Instantiation with optional width and height:
     def __init__(self, width=0, height=0):
     Public instance method: def area(self): that returns the rectangle area
@@ -36,6 +40,7 @@ class Rectangle:
     __width = None
     __height = None
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """__init__ dunder
@@ -97,10 +102,8 @@ class Rectangle:
         """__str__ dunder"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        str_ = ""
-        for i in range(self.__height):
-            str_ += "#" * self.__width + "\n"
-        return str_.strip()
+        return '\n'.join([str(self.print_symbol) * self.__width] *
+                         self.__height)
 
     def __del__(self):
         """__del__ dunder"""
