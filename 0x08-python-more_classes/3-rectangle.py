@@ -22,6 +22,9 @@ class Rectangle:
     Public instance method: def area(self): that returns the rectangle area
 	Public instance method: def perimeter(self): that returns the rectangle perimeter:
 		- if width or height is equal to 0, perimeter is equal to 0
+    Public instance method: def area(self): that returns the rectangle area
+	Public instance method: def perimeter(self): that returns the perimeter:
+		- if width or height is equal to 0, perimeter is equal to 0
     """
     __width = None
     __height = None
