@@ -20,17 +20,14 @@ class Rectangle:
         Instantiation with optional width and height:
         def __init__(self, width=0, height=0):
     """
-    __width = None
-    __height = None
-
     def __init__(self, width=0, height=0):
         """__init__ dunder
         Arguments:
             width : the width of rectangle
             height : the height of rectangle
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
