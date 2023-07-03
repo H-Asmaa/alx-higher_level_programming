@@ -83,7 +83,7 @@ class Rectangle:
 
     def __repr__(self):
         """__repr__ dunder"""
-        return f"Rectangle({self.__width}, {self.__height})"
+        return "Rectangle({:d}, {:d})".format(self.width, self.height)
 
     def __str__(self):
         """__str__ dunder"""
