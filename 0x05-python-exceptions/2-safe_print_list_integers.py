@@ -13,3 +13,8 @@ def safe_print_list_integers(my_list=[], x=0):
         count += 1
     print()
     return count
+
+my_list = []
+
+nb_print = safe_print_list_integers(my_list, 0)
+print("nb_print: {:d}".format(nb_print))
