@@ -46,7 +46,7 @@
 		>>> add_integer(None)
 		Traceback (most recent call last):
 		...
-		TypeError: a must be an integer or float
+		TypeError: a must be an integer
 
 ----------------------------------------------------------------------------------------------
 
