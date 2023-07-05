@@ -1,24 +1,15 @@
 #!/usr/bin/python3
 def add_integer(a, b=98):
     """
-    >>> add_integer(1, 2)
-    3
-    >>> add_integer(100, -2)
-    98
-    >>> add_integer(2)
-    100
-    >>> add_integer(100.3, -2)
-    98
-    >>> add_integer(4, "School")
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be an integer or float
-    >>> add_integer("Hello", 7)
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer or float
-    >>> add_integer(None)
-    98
+    Function that performs addition of two numbers.
+
+    Returns :
+        b casted to int in case a in None
+        a added to b casted to int
+
+    Raises :
+        TypeError in case a is not an int nor a float
+        TypeError in case b is not an int nor a float
     """
     if a is None:
         return int(b)
