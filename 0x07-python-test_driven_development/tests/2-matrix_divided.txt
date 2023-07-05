@@ -1,6 +1,6 @@
 	"""
 
-		A set of tests to check the function add_integer
+		A set of tests to check the function matrix_divided
 
 	"""
 
