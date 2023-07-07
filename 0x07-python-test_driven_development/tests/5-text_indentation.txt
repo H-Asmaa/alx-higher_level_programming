@@ -1,6 +1,6 @@
 	"""
 
-		A set of tests to check the function print_square
+		A set of tests to check the function say_my_name
 
 	"""
 
