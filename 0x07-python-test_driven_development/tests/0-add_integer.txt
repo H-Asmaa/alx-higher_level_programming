@@ -50,7 +50,7 @@
 		TypeError: a must be an integer
 
 ----------------------------------------------------------------------------------------------
-				Testing NONE 						     |
+				Testing EXTRA 						     |
 ----------------------------------------------------------------------------------------------
 
 		>>> add_integer(None)
@@ -58,12 +58,22 @@
 		...
 		TypeError: a must be an integer
 
+		>>> add_integer(2, float('inf'))
+		Traceback (most recent call last):
+		...
+		OverflowError: cannot convert float infinity to integer
+
+		>>> add_integer(2, float('nan'))
+		Traceback (most recent call last):
+		...
+		ValueError: cannot convert float NaN to integer
+
 ----------------------------------------------------------------------------------------------
 				Testing TYPE 						     |
 ----------------------------------------------------------------------------------------------
 
 		>>> type(add_integer(4, 2.3))
-		<class int>
+		<class 'int'>
 
 ----------------------------------------------------------------------------------------------
 
