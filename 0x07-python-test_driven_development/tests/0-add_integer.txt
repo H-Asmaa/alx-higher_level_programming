@@ -34,6 +34,11 @@
 				Testing STRINGS						     |
 ----------------------------------------------------------------------------------------------
 
+		>>> add_integer(1, "2")
+		Traceback (most recent call last):
+		...
+		TypeError: b must be an integer
+
 		>>> add_integer(4, "School")
 		Traceback (most recent call last):
 		...
