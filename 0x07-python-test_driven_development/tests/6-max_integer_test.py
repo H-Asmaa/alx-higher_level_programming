@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import unittest
 """Module to find the max integer in a list
 """
 
@@ -16,3 +17,13 @@ def max_integer(list=[]):
             result = list[i]
         i += 1
     return result
+
+
+class Test_method(unittest.TestCase):
+    def test_max_integer(self):
+        test = max_integer([1, 4, 8, 10])
+        self.assertEqual(test, 10)
+        test = max_integer([1, 4, -8, 100])
+        self.assertEqual(test, 100)
+        test = max_integer([])
+        self.assertEqual(test, None)
