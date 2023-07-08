@@ -58,7 +58,7 @@
 		TypeError: Each row of the matrix must have the same size
 
 ----------------------------------------------------------------------------------------------
-				Testing Wrong length			         |
+				Testing Wrong Type			           |
 ----------------------------------------------------------------------------------------------
 
 		>>> matrix = [[1, "hello", 3], [4, "Hi", 6, 4]]
@@ -88,6 +88,10 @@
 		Traceback (most recent call last)
 		...
 		TypeError: matrix must be a matrix (array of arrays of integers/floats)
+
+		>>> matrix = [[]]
+    	>>> print(matrix_divided(matrix, 2))
+    	[[]]
 
 ----------------------------------------------------------------------------------------------
 
