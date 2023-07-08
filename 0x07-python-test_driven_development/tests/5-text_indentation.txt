@@ -1,6 +1,6 @@
 	"""
 
-		A set of tests to check the function say_my_name
+		A set of tests to check the function text_indentation
 
 	"""
 
@@ -8,45 +8,23 @@
 				Testing REGULARS    			   		    |
 --------------------------------------------------------------------------------------------------
 
->>> print_square = __import__('4-print_square').print_square
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
-		>>> print_square(0)
+		>>> text_indentation("Hello.How are you?")
+		Hello.
+		<BLANKLINE>
+		How are you?
+		<BLANKLINE>
 
-
-		>>> print_square(1)
-		#
-
-		>>> print_square(2)
-		##
-		##
-
-		>>> print_square(4)
-		####
-		####
-		####
-		####
-
-		>>> print_square(6)
-		######
-		######
-		######
-		######
-		######
-		######
 
 --------------------------------------------------------------------------------------------------
 				Testing IRREGULARS    			   		   |
 --------------------------------------------------------------------------------------------------
 
-		>>> print_square(1.3)
+		>>> text_indentation(1)
 		Traceback (most recent call last):
 		...
-		TypeError: size must be an integer
-
->>> print_square(-1)
-Traceback (most recent call last):
-...
-ValueError: size must be >= 0
+		TypeError: text must be a string
 
 --------------------------------------------------------------------------------------------------
 

@@ -1,25 +1,22 @@
 #!/usr/bin/python3
-"""say_my_name function"""
+"""text_indentation function"""
 
 
-def print_square(size):
+def text_indentation(text):
     """
-    Function that prints a square with the character #.
+    Function that prints a text with 2 new lines after each of
+    these characters: ., ? and :.
 
     Returns :
         Nothing
 
     Raises :
-        TypeError in case the size is not int
-        TypeError in case the size is higher or equal to zero.
+        TypeError in case the text is not string
     """
-    if isinstance(size, float) and size < 0:
-        raise TypeError("size must be an integer")
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
-    for i in range(size):
-        for j in range(size):
-            print("{}".format("#"), end="")
-        print()
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+    for i in text:
+        if i == "." or i == "?" or i == ":":
+            print("{}\n".format(i))
+        else:
+            print("{}".format(i), end="")
