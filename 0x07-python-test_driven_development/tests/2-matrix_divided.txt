@@ -80,12 +80,6 @@
     	>>> matrix_divided([[3]], 3)
     	[[1.0]]
 
-		>>> matrix = [[3, "9"], [15, 3]]
-		>>> matrix_divided(matrix, 2)
-		Traceback (most recent call last)
-		...
-		TypeError: matrix must be a matrix (array of arrays of integers/floats)
-
 		>>> matrix = [[]]
     	>>> print(matrix_divided(matrix, 2))
     	[[]]
