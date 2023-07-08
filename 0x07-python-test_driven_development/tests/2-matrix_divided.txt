@@ -77,13 +77,10 @@
 				Testing extra     			             |
 ----------------------------------------------------------------------------------------------
 
-		>>> matrix = [[3]]
-		>>> matrix_divided(matrix, 3)
-		Traceback (most recent call last):
-		...
-		TypeError: Each row of the matrix must have the same size
+    	>>> matrix_divided([[3]], 3)
+    	[[1.0]]
 
-		>>> matrix = [[3, “9”], [15, 3]]
+		>>> matrix = [[3, "9"], [15, 3]]
 		>>> matrix_divided(matrix, 2)
 		Traceback (most recent call last)
 		...
@@ -92,6 +89,12 @@
 		>>> matrix = [[]]
     	>>> print(matrix_divided(matrix, 2))
     	[[]]
+
+		>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3)
+		[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
+
+    	>>> matrix_divided([[14, 7], [21, -49], [21, 65]], float('inf'))
+    	[[0.0, 0.0], [0.0, -0.0], [0.0, 0.0]]
 
 ----------------------------------------------------------------------------------------------
 
