@@ -35,3 +35,6 @@ class Test_method(unittest.TestCase):
         self.assertEqual(test, -4)
         test = max_integer([1])
         self.assertEqual(test, 1)
+
+if __name__ == '__main__':
+    unittest.main()
