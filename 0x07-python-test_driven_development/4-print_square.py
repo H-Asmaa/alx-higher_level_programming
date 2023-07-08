@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""say_my_name function"""
+"""print_square function"""
 
 
 def print_square(size):
