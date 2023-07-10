@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""0. Lookup task"""
+"""
+0x0A. Python - Inheritance
+"""
 
 
 def lookup(obj):
