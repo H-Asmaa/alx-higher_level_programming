@@ -1,0 +1,58 @@
+	"""
+
+		A set of tests to check the class base_geometry
+
+	"""
+
+--------------------------------------------------------------------------------------------------
+				Testing INT						         |
+--------------------------------------------------------------------------------------------------
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("Hello", 12)
+
+	>>> bg.integer_validator("Hi", 3)
+
+	>>> bg.integer_validator("hiliw", 10)
+
+--------------------------------------------------------------------------------------------------
+				Testing UNWANTED VALUE					   |
+--------------------------------------------------------------------------------------------------
+
+	>>> bg.integer_validator("Name", -10)
+	Traceback (most recent call last):
+	...
+	ValueError: Name must be greater than 0
+
+	>>> bg.integer_validator("Name", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: Name must be greater than 0
+
+--------------------------------------------------------------------------------------------------
+				Testing STRING VALUE					   |
+--------------------------------------------------------------------------------------------------
+
+	>>> bg.integer_validator("Name", "HI")
+	Traceback (most recent call last):
+	...
+	TypeError: Name must be an integer
+
+--------------------------------------------------------------------------------------------------
+				Testing bool VALUE					       |
+--------------------------------------------------------------------------------------------------
+
+	>>> bg.integer_validator("Name", "HI")
+	Traceback (most recent call last):
+	...
+	TypeError: Name must be an integer
+
+----------------------------------------------------------------------------------------------
+
+	"""
+
+		end of tests
+
+	"""
