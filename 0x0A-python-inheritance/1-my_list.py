@@ -11,6 +11,8 @@ class MyList(list):
                 # that prints the list, sorted (ascending sort)s
                 # asssuming that elements are of type int
     """
+
     def print_sorted(self):
+        """Public instance method"""
         sorted_list = sorted(self, key=None, reverse=False)
         print(sorted_list)
