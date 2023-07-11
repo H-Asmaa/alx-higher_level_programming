@@ -49,6 +49,15 @@
 	...
 	TypeError: Name must be an integer
 
+--------------------------------------------------------------------------------------------------
+				Testing extra					           |
+--------------------------------------------------------------------------------------------------
+
+	>>> bg.integer_validator("Name")
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
 ----------------------------------------------------------------------------------------------
 
 	"""
