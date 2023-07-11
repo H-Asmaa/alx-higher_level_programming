@@ -17,5 +17,6 @@ argv = []
 i = 1
 for i in range(1, len(sys.argv)):
     argv.append(sys.argv[i])
-
+loaded_data = load_from_json_file("add_item.json")
+argv.extend(loaded_data)
 save_to_json_file(argv, "add_item.json")
