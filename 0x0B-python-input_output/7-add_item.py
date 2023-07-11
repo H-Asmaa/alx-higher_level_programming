@@ -13,10 +13,12 @@ import sys
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
-for i in range(1, len(sys.argv)):
-    with open("add_item.json", "x", encoding="UTF-8") as f:
-        read = load_from_json_file("add_item.json")
-        read.extend(sys.argv[i])
-
+try:
+    read = load_from_json_file("add_item.json")
+except FileNotFoundError:
+    read = []
+read.extend(sys.argv[1:])
 save_to_json_file(read, "add_item.json")
