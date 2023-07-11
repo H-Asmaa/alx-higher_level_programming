@@ -44,10 +44,8 @@
 				Testing bool VALUE					       |
 --------------------------------------------------------------------------------------------------
 
-	>>> bg.integer_validator("Name", "HI")
-	Traceback (most recent call last):
-	...
-	TypeError: Name must be an integer
+	>>> bg.integer_validator("Name", True)
+
 
 --------------------------------------------------------------------------------------------------
 				Testing extra					            |
@@ -64,6 +62,11 @@
 	TypeError: age must be an integer
 
 	>>> bg.integer_validator("age", None)
+	Traceback (most recent call last):
+	...
+	TypeError: age must be an integer
+
+	>>> bg.integer_validator("age", (4,))
 	Traceback (most recent call last):
 	...
 	TypeError: age must be an integer
