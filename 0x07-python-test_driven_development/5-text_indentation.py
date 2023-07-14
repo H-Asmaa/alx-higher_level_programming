@@ -20,7 +20,7 @@ def text_indentation(text):
     for i in range(len(text)):
         if text[i] == "." or text[i] == "?" or text[i] == ":":
             if i == len(text) - 1:
-                tmp += text[i] + "\n"
+                tmp += text[i]
             else:
                 tmp += text[i] + "\n\n"
             space = False

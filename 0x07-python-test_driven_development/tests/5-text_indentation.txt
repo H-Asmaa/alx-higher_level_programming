@@ -14,7 +14,6 @@
 		Hello.
 		<BLANKLINE>
 		How are you?
-		<BLANKLINE>
 
 		>>> text_indentation("Holberton. School? How are you: John")
 		Holberton.
@@ -24,6 +23,14 @@
 		How are you:
 		<BLANKLINE>
 		John
+
+		>>> text_indentation("Holberton.School")
+		Holberton.
+		<BLANKLINE>
+		School
+
+		>>> text_indentation("Holberton School")
+		Holberton School
 
 --------------------------------------------------------------------------------------------------
 				Testing IRREGULARS    			   		   |
