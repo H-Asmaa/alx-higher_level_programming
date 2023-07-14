@@ -29,4 +29,4 @@ def text_indentation(text):
         else:
             tmp += text[i]
             space = True
-    print(tmp)
+    print("{}".format(tmp), end="")
