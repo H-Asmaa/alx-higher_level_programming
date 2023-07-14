@@ -13,10 +13,20 @@ def text_indentation(text):
     Raises :
         TypeError in case the text is not string
     """
+    tmp = ""
+    space = True
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for i in text:
-        if i == "." or i == "?" or i == ":":
-            print("{}\n".format(i))
+    for i in range(len(text)):
+        if text[i] == "." or text[i] == "?" or text[i] == ":":
+            if i == len(text) - 1:
+                tmp += text[i] + "\n"
+            else:
+                tmp += text[i] + "\n\n"
+            space = False
+        elif text[i] == " " and space is False:
+            continue
         else:
-            print("{}".format(i), end="")
+            tmp += text[i]
+            space = True
+    print(tmp)
