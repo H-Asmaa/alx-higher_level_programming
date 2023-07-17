@@ -55,6 +55,14 @@ class Base:
                 - You must use the method def update(self, *args, **kwargs)
                 - **dictionary must be used as **kwargs of the method update
                 - You are not allowed to use eval
+        Task 19:
+            Adding the class method def load_from_file(cls): that returns a
+            list of instances:
+                - The filename must be: <Class name>.json ex: Rectangle.json
+                - If the file doesn’t exist, return an empty list
+                - Otherwise, return a list of instances - the type of these
+                instances depends on cls (current class using this method)
+                - You must use the from_json_string and create methods
     """
     __nb_objects = 0
 
@@ -96,3 +104,15 @@ class Base:
         instance = cls(**instance_dict)
         instance.update(**instance_dict)
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        file_name = cls.__name__ + ".json"
+        instances_list = []
+        with open(file_name, "r", encoding="UTF-8") as f:
+            data = f.read()
+            dictionary = Base.from_json_string(data)
+            for i in dictionary:
+                instance = cls.create(**i)
+                instances_list.append(instance)
+        return instances_list
