@@ -67,6 +67,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """__init__ method"""
         if id is not None:
             self.id = id
         else:
@@ -75,12 +76,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """to_json_string method"""
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """save_to _file method"""
         file_name = cls.__name__ + ".json"
         list_ = []
         with open(file_name, "w", encoding="UTF-8") as f:
@@ -92,12 +95,14 @@ class Base:
                 f.write(Base.to_json_string(list_))
 
     def from_json_string(json_string):
+        """from_json_string method"""
         if json_string is None:
             return ("[]")
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """create method"""
         instance_dict = {}
         for key, val in dictionary.items():
             instance_dict[key] = val
@@ -107,6 +112,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """load_from_file method"""
         file_name = cls.__name__ + ".json"
         instances_list = []
         with open(file_name, "r", encoding="UTF-8") as f:
