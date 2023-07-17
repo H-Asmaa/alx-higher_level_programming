@@ -33,6 +33,12 @@ class Base:
                 - The filename must be: <Class name>.json ex: Rectangle.json
                 - You must use the static method to_json_string
                 - You must overwrite the file if it already exists
+        Task 17:
+            Adding the static method def from_json_string(json_string): that
+            returns the list of the JSON string representation json_string:
+                - json_string is a string representing a list of dictionaries
+                - If json_string is None or empty, return an empty list
+                - Otherwise, return the list represented by json_string
     """
     __nb_objects = 0
 
@@ -60,3 +66,8 @@ class Base:
                 for i in list_objs:
                     list_.append(i.to_dictionary())
                 f.write(Base.to_json_string(list_))
+
+    def from_json_string(json_string):
+        if json_string is None:
+            return ("[]")
+        return json.loads(json_string)
