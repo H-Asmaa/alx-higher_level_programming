@@ -39,6 +39,22 @@ class Base:
                 - json_string is a string representing a list of dictionaries
                 - If json_string is None or empty, return an empty list
                 - Otherwise, return the list represented by json_string
+
+            PS: We can unpack the dictionary using ** notation to pass the
+            attribute-value pairs as keyword arguments.
+        Task 18:
+            Adding the class method def create(cls, **dictionary): that
+            returns an instance with all attributes already set:
+                - **dictionary is like a double pointer to a dictionary
+                - To use the update method to assign all attributes, you must
+                create a “dummy” instance before:
+                - Create a Rectangle or Square instance with “dummy” mandatory
+                attributes (width, height, size, etc.)
+                - Call update instance method to this “dummy” instance to apply
+                your real values
+                - You must use the method def update(self, *args, **kwargs)
+                - **dictionary must be used as **kwargs of the method update
+                - You are not allowed to use eval
     """
     __nb_objects = 0
 
@@ -71,3 +87,12 @@ class Base:
         if json_string is None:
             return ("[]")
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        instance_dict = {}
+        for key, val in dictionary.items():
+            instance_dict[key] = val
+        instance = cls(**instance_dict)
+        instance.update(**instance_dict)
+        return instance
