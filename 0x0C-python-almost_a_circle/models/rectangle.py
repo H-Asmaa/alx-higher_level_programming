@@ -53,6 +53,16 @@ class Rectangle(Base):
                 - 5th argument should be the y attribute
             This type of argument is called a “no-keyword argument” - Argument
             order is super important.
+        Task 9:
+            Updating the public method update by changing it to
+            update(self, *args, **kwargs) that assigns a key/value argument
+            to attributes:
+                - **kwargs is like double pointer to a dictionary
+                - **kwargs is not literally a double pointer
+                - **kwargs must be skipped if *args exists and is not empty
+                Each key represents an attribute to the instance
+            This type of argument is called a “key-worded argument”. Argument
+            order is not important.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -128,7 +138,12 @@ class Rectangle(Base):
         height = self.__height
         return f"({self.id}) {self.__x}/{self.__y} - {width}/{height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         attribute_names = ['id', 'width', 'height', 'x', 'y']
-        for i in range(min(len(attribute_names), len(args))):
-            setattr(self, attribute_names[i], args[i])
+        if args:
+            for i in range(min(len(attribute_names), len(args))):
+                setattr(self, attribute_names[i], args[i])
+        else:
+            for key, val in kwargs.items():
+                if key in attribute_names:
+                    setattr(self, key, val)
