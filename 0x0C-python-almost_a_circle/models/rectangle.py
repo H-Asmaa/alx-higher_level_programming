@@ -134,9 +134,9 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        width = self.__width
-        height = self.__height
-        return f"({self.id}) {self.__x}/{self.__y} - {width}/{height}"
+        w = self.__width
+        h = self.__height
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {w}/{h}"
 
     def update(self, *args, **kwargs):
         attribute_names = ['id', 'width', 'height', 'x', 'y']
