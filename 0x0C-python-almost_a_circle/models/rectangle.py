@@ -43,6 +43,16 @@ class Rectangle(Base):
             With x and y defining the position of the rectangle.
                 x - the horizontal displacement
                 y - the vertical displacement
+        Task 8:
+            Adding the public method def update(self, *args): that assigns
+            an argument to each attribute:
+                - 1st argument should be the id attribute
+                - 2nd argument should be the width attribute
+                - 3rd argument should be the height attribute
+                - 4th argument should be the x attribute
+                - 5th argument should be the y attribute
+            This type of argument is called a “no-keyword argument” - Argument
+            order is super important.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -117,3 +127,8 @@ class Rectangle(Base):
         width = self.__width
         height = self.__height
         return f"({self.id}) {self.__x}/{self.__y} - {width}/{height}"
+
+    def update(self, *args):
+        attribute_names = ['id', 'width', 'height', 'x', 'y']
+        for i in range(min(len(attribute_names), len(args))):
+            setattr(self, attribute_names[i], args[i])
