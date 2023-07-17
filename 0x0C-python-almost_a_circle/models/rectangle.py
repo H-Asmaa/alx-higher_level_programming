@@ -23,10 +23,13 @@ class Rectangle(Base):
             Assign each argument width, height, x and y to the
             right attribute
         Task 3:
-            validation of all setter methods and instantiation (id excluded):
+            Validation of all setter methods and instantiation (id excluded):
                 If the input is not an integer, raise the TypeError exception
                 If width or height <= 0, raise a ValueError exception
                 If x or y < 0, raise the ValueError exception
+        Task 4:
+            Adding the public method def area(self): that returns the area
+            value of the Rectangle instance.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -83,3 +86,6 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        return self.__width * self.__height
