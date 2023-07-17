@@ -58,6 +58,7 @@ class Square(Rectangle):
     """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """__init__ method"""
         super().__init__(size, size, x, y, id=None)
 
     def __str__(self):
@@ -65,14 +66,17 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """size getter method"""
         return self.width
 
     @size.setter
     def size(self, value):
+        """size setter method"""
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """update method"""
         attribute_names = ['id', 'size', 'x', 'y']
         if args:
             for i in range(min(len(attribute_names), len(args))):
@@ -83,6 +87,7 @@ class Square(Rectangle):
                     setattr(self, key, val)
 
     def to_dictionary(self):
+        """to_dictionary method"""
         dictionnary = {'id': self.id,
                        'size': self.size,
                        'x': self.x,
