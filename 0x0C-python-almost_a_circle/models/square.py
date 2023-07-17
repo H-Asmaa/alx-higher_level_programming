@@ -47,6 +47,14 @@ class Square(Rectangle):
                 **kwargs must be skipped if *args exists and is not empty
                 Each key in this dictionary represents an attribute to
                 the instance
+        Task 14:
+            Adding the public method def to_dictionary(self): that returns
+            the dictionary representation of a Square:
+            This dictionary must contain:
+                - id
+                - size
+                - x
+                - y
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -73,3 +81,10 @@ class Square(Rectangle):
             for key, val in kwargs.items():
                 if key in attribute_names:
                     setattr(self, key, val)
+
+    def to_dictionary(self):
+        dictionnary = {'id': self.id,
+                       'size': self.size,
+                       'x': self.x,
+                       'y': self.y}
+        return dictionnary
