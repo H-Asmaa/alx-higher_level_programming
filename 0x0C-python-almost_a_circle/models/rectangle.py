@@ -37,6 +37,12 @@ class Rectangle(Base):
         Task 6:
             Overriding the __str__ method from the object class so that it
             returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        Task 7:
+            Improving the public method def display(self): to print the
+            Rectangle instance with the character # by taking care of x and y
+            With x and y defining the position of the rectangle.
+                x - the horizontal displacement
+                y - the vertical displacement
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -98,7 +104,11 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
+            for o in range(self.__x):
+                print(end=" ")
             for j in range(self.__width):
                 print("{}".format("#"), end="")
             print()
