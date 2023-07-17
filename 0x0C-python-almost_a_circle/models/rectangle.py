@@ -30,6 +30,10 @@ class Rectangle(Base):
         Task 4:
             Adding the public method def area(self): that returns the area
             value of the Rectangle instance.
+        Task 5:
+            Adding the public method def display(self): that prints in stdout
+            the Rectangle instance with the character #
+            no need to handle x and y.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -89,3 +93,9 @@ class Rectangle(Base):
 
     def area(self):
         return self.__width * self.__height
+
+    def display(self):
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("{}".format("#"), end="")
+            print()
