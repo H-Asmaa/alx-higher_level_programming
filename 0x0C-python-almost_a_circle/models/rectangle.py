@@ -75,6 +75,7 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """__init__ method"""
         self.width = width
         self.height = height
         self.x = x
@@ -83,10 +84,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width getter method"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """width setter method"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -95,10 +98,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """height getter method"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """height setter method"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -107,10 +112,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """x getter method"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """x setter method"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -119,10 +126,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """y getter method"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """y setter method"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -130,9 +139,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """ method"""
         return self.__width * self.__height
 
     def display(self):
+        """display method"""
         for i in range(self.__y):
             print()
         for i in range(self.__height):
@@ -143,11 +154,13 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """__str__ method"""
         w = self.__width
         h = self.__height
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {w}/{h}"
 
     def update(self, *args, **kwargs):
+        """update method"""
         attribute_names = ['id', 'width', 'height', 'x', 'y']
         if args:
             for i in range(min(len(attribute_names), len(args))):
@@ -158,6 +171,7 @@ class Rectangle(Base):
                     setattr(self, key, val)
 
     def to_dictionary(self):
+        """to_dictionary method"""
         dictionnary = {'id': self.id,
                        'width': self.width,
                        'height': self.height,
