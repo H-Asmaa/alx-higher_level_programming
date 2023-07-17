@@ -34,6 +34,9 @@ class Rectangle(Base):
             Adding the public method def display(self): that prints in stdout
             the Rectangle instance with the character #
             no need to handle x and y.
+        Task 6:
+            Overriding the __str__ method from the object class so that it
+            returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -99,3 +102,8 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print("{}".format("#"), end="")
             print()
+
+    def __str__(self):
+        width = self.__width
+        height = self.__height
+        return f"({self.id}) {self.__x}/{self.__y} - {width}/{height}"
