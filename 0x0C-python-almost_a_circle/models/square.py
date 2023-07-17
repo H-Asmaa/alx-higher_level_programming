@@ -27,6 +27,13 @@ class Square(Rectangle):
             A Square is a special Rectangle, so it makes sense this class
             Square inherits from Rectangle. Now you have a Square class
             who has the same attributes and same methods.
+        Task 11:
+            Adding the public getter and setter size
+                - The setter should assign (in this order) the width and
+                the height - with the same value
+                - The setter should have the same value validation as the
+                Rectangle for width and height - No need to change the
+                exception error message (It should be the one from width)
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -34,3 +41,12 @@ class Square(Rectangle):
 
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
