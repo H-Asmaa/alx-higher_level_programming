@@ -63,6 +63,15 @@ class Rectangle(Base):
                 Each key represents an attribute to the instance
             This type of argument is called a “key-worded argument”. Argument
             order is not important.
+        Task 13:
+            Adding the public method def to_dictionary(self): that returns
+            the dictionary representation of a Rectangle:
+            This dictionary must contain:
+                - id
+                - width
+                - height
+                - x
+                - y
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -147,3 +156,11 @@ class Rectangle(Base):
             for key, val in kwargs.items():
                 if key in attribute_names:
                     setattr(self, key, val)
+
+    def to_dictionary(self):
+        dictionnary = {'id': self.id,
+                       'width': self.width,
+                       'height': self.height,
+                       'x': self.x,
+                       'y': self.y}
+        return dictionnary
