@@ -2,6 +2,8 @@
 """ 19-main """
 from models.rectangle import Rectangle
 from models.square import Square
+import os
+import json
 
 if __name__ == "__main__":
 
@@ -39,3 +41,26 @@ if __name__ == "__main__":
 
     for square in list_squares_output:
         print("[{}] {}".format(id(square), square))
+
+    """
+        Main from QA.
+        Expected output = OK
+        Got = OK
+    """
+    file_path = "Rectangle.json"
+    if os.path.exists(file_path):
+        os.remove(file_path)
+
+    res = Rectangle.load_from_file()
+
+    if res is None:
+        print("load_from_file doesn't return an empty"
+              " list when the file doesn't exist")
+        exit(1)
+
+    if len(res) != 0:
+        print("load_from_file doesn't return an empty"
+              " list when the file doesn't exist")
+        exit(1)
+
+    print("OK", end="")

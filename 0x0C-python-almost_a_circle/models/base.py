@@ -4,6 +4,7 @@
 """
 
 import json
+import os
 
 
 class Base:
@@ -114,6 +115,8 @@ class Base:
     def load_from_file(cls):
         """load_from_file method"""
         file_name = cls.__name__ + ".json"
+        if not os.path.exists(file_name):
+            return []
         instances_list = []
         with open(file_name, "r", encoding="UTF-8") as f:
             data = f.read()
