@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """ 1-main """
-"""0) main"""
 from models.base import Base
-"""1) & 2) main import inspect"""
 import inspect
 
 if __name__ == "__main__":
