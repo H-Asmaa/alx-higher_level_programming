@@ -97,7 +97,7 @@ class Base:
     def from_json_string(json_string):
         """from_json_string method"""
         if json_string is None:
-            return ("[]")
+            return []
         return json.loads(json_string)
 
     @classmethod
