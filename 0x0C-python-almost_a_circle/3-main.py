@@ -8,11 +8,11 @@ if __name__ == "__main__":
         0)
         Main from Task.
         Expected output :                    |        Got:
-        -----------------------------------------------------------------------------
-        [TypeError] height must be an integer|[TypeError] height must be an integer
-        [ValueError] width must be > 0       |[ValueError] width must be > 0
-        [TypeError] x must be an integer     |[TypeError] x must be an integer
-        [ValueError] y must be >= 0          |[ValueError] y must be >= 0
+        -------------------------------------------------------------------------------
+        [TypeError] height must be an integer|  [TypeError] height must be an integer
+        [ValueError] width must be > 0       |  [ValueError] width must be > 0
+        [TypeError] x must be an integer     |  [TypeError] x must be an integer
+        [ValueError] y must be >= 0          |  [ValueError] y must be >= 0
     """
     try:
         Rectangle(10, "2")
