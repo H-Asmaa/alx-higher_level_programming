@@ -2,6 +2,7 @@
 	0x0C. Python - Almost a circle
 """
 from models.base import Base
+from models.rectangle import Rectangle
 import unittest
 import os
 
@@ -28,6 +29,24 @@ class TestBase(unittest.TestCase):
         json_str = obj_base.to_json_string(None)
         self.assertIsInstance(json_str, str)
 
+    def test_from_json_string(self):
+        list_input = [{'height': 2, 'width': 1, 'id': 77},
+                      {'height': 18, 'width': 11, 'id': 7}]
+        json_str = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_str)
+        self.assertEqual(list_output, list_input)
+        self.assertIsInstance(list_output, list)
+
+        list_input = [{'height': 2, 'width': 1, 'id': 77},
+                      {'height': 18, 'width': 11, 'id': 7}]
+        json_str = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_str)
+        self.assertEqual(list_output, [{'height': 4, 'width': 10, 'id': 89,
+                                        'x': 3, 'y': 2},
+                                       {'height': 7, 'width': 1, 'id': 7,
+                                        'x': 3}])
+        self.assertIsInstance(list_output, list)
+
 
 """
     def test_save_to_file(self):
@@ -45,7 +64,6 @@ class TestBase(unittest.TestCase):
                                         'height': 7,
                                         'y': 8})
 
-    def test_from_json_string(self):
     def test_create(self):
     def test_load_from_file(self):
 	"""
