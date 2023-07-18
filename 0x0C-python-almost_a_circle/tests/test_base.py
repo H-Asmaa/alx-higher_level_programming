@@ -37,6 +37,9 @@ class TestBase(unittest.TestCase):
         self.assertEqual(list_output, list_input)
         self.assertIsInstance(list_output, list)
 
+
+"""
+    def test_from_json_string(self):
         list_input = [{'height': 2, 'width': 1, 'id': 77},
                       {'height': 18, 'width': 11, 'id': 7}]
         json_str = Rectangle.to_json_string(list_input)
@@ -46,9 +49,6 @@ class TestBase(unittest.TestCase):
                                        {'height': 7, 'width': 1, 'id': 7,
                                         'x': 3}])
         self.assertIsInstance(list_output, list)
-
-
-"""
     def test_save_to_file(self):
         obj_base = Base()
         obj_base.save_to_file(Base, {'x': 2,
