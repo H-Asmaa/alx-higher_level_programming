@@ -141,7 +141,7 @@ class Base:
                 write.writerow(["id", "size", "x", "y"])
                 for obj in list_objs:
                     write.writerow(
-                        [obj.id, obj.width, obj.height, obj.x, obj.y])
+                        [obj.id, obj.size, obj.x, obj.y])
 
     @classmethod
     def load_from_file_csv(cls):
