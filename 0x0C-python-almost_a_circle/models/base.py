@@ -5,6 +5,7 @@
 
 import json
 import os
+import csv
 
 
 class Base:
@@ -125,3 +126,46 @@ class Base:
                 instance = cls.create(**i)
                 instances_list.append(instance)
         return instances_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        file_name = cls.__name__ + ".csv"
+        with open(file_name, mode="w", newline="") as f:
+            write = csv.writer(f)
+            if file_name == "Rectangle.csv":
+                write.writerow(["id", "width", "height", "x", "y"])
+                for obj in list_objs:
+                    write.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif file_name == "Square.csv":
+                write.writerow(["id", "size", "x", "y"])
+                for obj in list_objs:
+                    write.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        file_name = cls.__name__ + ".csv"
+        instances = []
+        with open(file_name, mode="r", newline="") as f:
+            reader = csv.reader(f)
+            next(reader)
+            for row in reader:
+                if cls.__name__ == "Rectangle":
+                    dict = {
+                        "id": int(row[0]),
+                        "width": int(row[1]),
+                        "height": int(row[2]),
+                        "x": int(row[3]),
+                        "y": int(row[4]),
+                    }
+                    instances.append(cls.create(**dict))
+                elif cls.__name__ == "Square":
+                    dict = {
+                        "id": int(row[0]),
+                        "size": int(row[1]),
+                        "x": int(row[2]),
+                        "y": int(row[3]),
+                    }
+                    instances.append(cls.create(**dict))
+        return instances
