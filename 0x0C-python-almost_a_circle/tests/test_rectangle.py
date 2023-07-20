@@ -47,3 +47,13 @@ class TestRectangle(unittest.TestCase):
         output = obj_2.__str__()
         expected_output = "[Rectangle] (4) 1/0 - 5/5"
         self.assertEqual(output, expected_output)
+
+    def test_update(self):
+        """Testing the method update"""
+        obj = Rectangle(3, 10, 10, 10, 10)
+        obj.update(13, 8, 7, 9, 12)
+        self.assertEqual(obj.id, 13)
+        self.assertEqual(obj.width, 8)
+        self.assertEqual(obj.height, 7)
+        self.assertEqual(obj.x, 9)
+        self.assertEqual(obj.y, 12)
