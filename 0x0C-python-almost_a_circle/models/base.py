@@ -6,6 +6,7 @@
 import json
 import os
 import csv
+import turtle
 
 
 class Base:
@@ -169,3 +170,18 @@ class Base:
                     }
                     instances.append(cls.create(**dict))
         return instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        t = turtle.Turtle()
+        for rectangle in list_rectangles:
+            for i in range(2):
+                t.forward(rectangle.width)
+                t.left(90)
+                t.forward(rectangle.height)
+                t.left(90)
+        for square in list_squares:
+            for i in range(4):
+                t.forward(square.size)
+                t.left(90)
+        turtle.done()
