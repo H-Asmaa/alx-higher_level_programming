@@ -17,6 +17,30 @@ class TestRectangle(unittest.TestCase):
         command : python3 -m unittest discover tests
     """
 
+    def test_attributes_validation(self):
+        """Testing tracebacks for attributes"""
+        with self.assertRaises(TypeError) as traceback:
+            instance = Rectangle("h", 2)
+        self.assertEqual(str(traceback.exception), "width must be an integer")
+        with self.assertRaises(TypeError) as traceback:
+            instance = Rectangle(1, "h")
+        self.assertEqual(str(traceback.exception), "height must be an integer")
+        with self.assertRaises(ValueError) as traceback:
+            instance = Rectangle(-1, 2)
+        self.assertEqual(str(traceback.exception), "width must be > 0")
+        with self.assertRaises(TypeError) as traceback:
+            instance = Rectangle(1, 2, "w")
+        self.assertEqual(str(traceback.exception), "x must be an integer")
+        with self.assertRaises(ValueError) as traceback:
+            instance = Rectangle(1, 2, -1)
+        self.assertEqual(str(traceback.exception), "x must be >= 0")
+        with self.assertRaises(TypeError) as traceback:
+            instance = Rectangle(1, 2, 1, "d")
+        self.assertEqual(str(traceback.exception), "y must be an integer")
+        with self.assertRaises(ValueError) as traceback:
+            instance = Rectangle(1, 2, 1, -7)
+        self.assertEqual(str(traceback.exception), "y must be >= 0")
+
     def test_area(self):
         """Testing the method area"""
         obj = Rectangle(3, 2)
