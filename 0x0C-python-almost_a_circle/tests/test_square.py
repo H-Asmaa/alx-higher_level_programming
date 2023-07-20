@@ -2,7 +2,7 @@
 0x0C. Python - Almost a circle
 """
 from models.base import Base
-from models.rectangle import Rectangle
+from models.square import Square
 import unittest
 
 
@@ -13,8 +13,19 @@ class TestBase(unittest.TestCase):
         command : python3 -m unittest discover tests
     """
 
+    def test___str__(self):
+        """Testing the method __str__"""
+        obj = Square(4, 6, 1, 12)
+        output = obj.__str__()
+        expected_output = "[Square] (12) 6/1 - 4"
+        self.assertEqual(output, expected_output)
+        obj_2 = Square(5, 5, 1)
+        output = obj_2.__str__()
+        expected_output = "[Square] (9) 5/1 - 5"
+        self.assertEqual(output, expected_output)
+
     def test_to_dictionary(self):
         """Testing the method to_dictionary"""
-        obj = Rectangle(10, 2, 1, 9)
+        obj = Square(10, 2, 1, 9)
         output = obj.to_dictionary()
         self.assertIsInstance(output, dict)
