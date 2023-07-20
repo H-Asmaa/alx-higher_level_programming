@@ -6,7 +6,7 @@ from models.square import Square
 import unittest
 
 
-class TestBase(unittest.TestCase):
+class TestSquare(unittest.TestCase):
     """
         All your files, classes and methods must be unit tested
         and be PEP 8 validated.

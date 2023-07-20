@@ -22,6 +22,8 @@ class TestBase(unittest.TestCase):
         self.assertEqual(obj_base.id, 2)
         obj_base.id = 3
         self.assertEqual(obj_base.id, 3)
+        obj_base = Base(89)
+        self.assertEqual(obj_base.id, 89)
 
     def test_to_json_string(self):
         """Testing the method to_json_string"""
@@ -36,6 +38,14 @@ class TestBase(unittest.TestCase):
         self.assertEqual(json_str, expected_str)
         json_str = obj_base.to_json_string(None)
         self.assertIsInstance(json_str, str)
+        expected_str = '[]'
+        self.assertEqual(json_str, expected_str)
+        json_str = obj_base.to_json_string([])
+        expected_str = '[]'
+        self.assertEqual(json_str, expected_str)
+        json_str = obj_base.to_json_string([{'id':12}])
+        expected_str = '[{"id": 12}]'
+        self.assertEqual(json_str, expected_str)
 
     def test_from_json_string(self):
         """Testing the method from_json_string"""
