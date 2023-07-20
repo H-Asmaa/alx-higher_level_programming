@@ -48,8 +48,8 @@ class TestRectangle(unittest.TestCase):
         expected_output = "[Rectangle] (4) 1/0 - 5/5"
         self.assertEqual(output, expected_output)
 
-    def test_update(self):
-        """Testing the method update"""
+    def test_update_with_args(self):
+        """Testing the method update with args"""
         obj = Rectangle(3, 10, 10, 10, 10)
         obj.update(13, 8, 7, 9, 12)
         self.assertEqual(obj.id, 13)
@@ -57,3 +57,33 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(obj.height, 7)
         self.assertEqual(obj.x, 9)
         self.assertEqual(obj.y, 12)
+        obj.update(6, 5, 4)
+        self.assertEqual(obj.id, 6)
+        self.assertEqual(obj.width, 5)
+        self.assertEqual(obj.height, 4)
+
+    def test_update_with_kwargs(self):
+        """Testing the method update with kwargs"""
+        obj = Rectangle(3, 10, 10, 10, 10)
+        obj.update(id=11, width=8, height=5, x=9, y=12)
+        self.assertEqual(obj.id, 11)
+        self.assertEqual(obj.width, 8)
+        self.assertEqual(obj.height, 5)
+        self.assertEqual(obj.x, 9)
+        self.assertEqual(obj.y, 12)
+        obj.update(height=30, x=10, y=2)
+        self.assertEqual(obj.id, 11)
+        self.assertEqual(obj.width, 8)
+        self.assertEqual(obj.height, 30)
+        self.assertEqual(obj.x, 10)
+        self.assertEqual(obj.y, 2)
+
+    def test_update_with_kwargs_and_args(self):
+        """Testing the method update with kwargs and args"""
+        obj = Rectangle(10, 20, 5, 5, 1)
+        obj.update()
+        self.assertEqual(obj.id, 1)
+        self.assertEqual(obj.width, 10)
+        self.assertEqual(obj.height, 20)
+        self.assertEqual(obj.x, 5)
+        self.assertEqual(obj.y, 5)
