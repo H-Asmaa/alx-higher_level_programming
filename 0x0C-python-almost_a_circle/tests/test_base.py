@@ -74,7 +74,14 @@ class TestBase(unittest.TestCase):
         obj_dict = obj.to_dictionary()
         obj_creation = Rectangle.create(**obj_dict)
         self.assertEqual("[Rectangle] (1) 1/0 - 3/5", str(obj_creation))
-
+        obj_creation = Rectangle.create(**{'id': 89, 'width': 1, 'height': 3})
+        self.assertEqual("[Rectangle] (89) 0/0 - 1/3", str(obj_creation))
+        obj_creation = Rectangle.create(
+            **{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual("[Rectangle] (89) 3/0 - 1/2", str(obj_creation))
+        obj_creation = Rectangle.create(
+            **{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual("[Rectangle] (89) 3/4 - 1/2", str(obj_creation))
 
 if __name__ == "__main__":
     unittest.main()
