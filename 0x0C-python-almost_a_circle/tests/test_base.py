@@ -47,18 +47,6 @@ class TestBase(unittest.TestCase):
         expected_str = '[{"id": 12}]'
         self.assertEqual(json_str, expected_str)
 
-    def test_save_to_file(self):
-        """Testing the method save_to_file"""
-        """METHOD NOT SOLVED YET
-        self.test_file = "test_file.json"
-        if os.path.exists(self.test_file):
-            os.remove(self.test_file)
-        Base.save_to_file(None)
-        with open(self.test_file, "r", encoding="UTF-8") as f:
-            read = f.read()
-            self.assertEqual(read, "[]")
-        """
-
     def test_from_json_string(self):
         """Testing the method from_json_string"""
         list_input = [{'height': 2, 'width': 1, 'id': 77},
