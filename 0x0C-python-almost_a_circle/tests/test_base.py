@@ -55,6 +55,18 @@ class TestBase(unittest.TestCase):
         list_output = Rectangle.from_json_string(json_str)
         self.assertEqual(list_output, list_input)
         self.assertIsInstance(list_output, list)
+        list_input = None
+        json_str = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_str)
+        self.assertEqual(list_output, [])
+        list_input = []
+        json_str = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_str)
+        self.assertEqual(list_output, [])
+        list_input = '[{ "id": 89 }]'
+        json_str = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_str)
+        self.assertEqual(list_output, '[{ "id": 89 }]')
 
     def test_create(self):
         """Testing the method create"""
