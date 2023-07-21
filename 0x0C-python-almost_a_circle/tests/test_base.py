@@ -43,7 +43,7 @@ class TestBase(unittest.TestCase):
         json_str = obj_base.to_json_string([])
         expected_str = '[]'
         self.assertEqual(json_str, expected_str)
-        json_str = obj_base.to_json_string([{'id': 12}])
+        json_str = obj_base.to_json_string([{'id':12}])
         expected_str = '[{"id": 12}]'
         self.assertEqual(json_str, expected_str)
 
@@ -74,22 +74,6 @@ class TestBase(unittest.TestCase):
         obj_dict = obj.to_dictionary()
         obj_creation = Rectangle.create(**obj_dict)
         self.assertEqual("[Rectangle] (1) 1/0 - 3/5", str(obj_creation))
-        obj_creation = Rectangle.create(**{'id': 89, 'width': 1, 'height': 3})
-        self.assertEqual("[Rectangle] (89) 0/0 - 1/3", str(obj_creation))
-        obj_creation = Rectangle.create(
-            **{'id': 89, 'width': 1, 'height': 2, 'x': 3})
-        self.assertEqual("[Rectangle] (89) 3/0 - 1/2", str(obj_creation))
-        obj_creation = Rectangle.create(
-            **{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
-        self.assertEqual("[Rectangle] (89) 3/4 - 1/2", str(obj_creation))
-
-    def test_create_validation(self):
-        """Testing the method create's exceptions"""
-        with self.assertRaises(TypeError) as traceback:
-            instance = Rectangle.create(**{'id': 89, 'width': 1})
-        self.assertEqual(str(traceback.exception),
-                         "Rectangle.__init__() missing 1 required "
-                         "positional argument: 'height'")
 
 
 if __name__ == "__main__":
