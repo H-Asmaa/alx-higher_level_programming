@@ -65,6 +65,53 @@ class TestSquare(unittest.TestCase):
         expected_output = "[Square] (9) 5/1 - 5"
         self.assertEqual(output, expected_output)
 
+    def test_update_with_args(self):
+        """Testing the method update with args"""
+        obj = Square(3, 10, 10, 10)
+        obj.update(13, 7, 9, 12)
+        self.assertEqual(obj.id, 13)
+        self.assertEqual(obj.size, 7)
+        self.assertEqual(obj.x, 9)
+        self.assertEqual(obj.y, 12)
+        obj.update(6, 5)
+        self.assertEqual(obj.id, 6)
+        self.assertEqual(obj.size, 5)
+
+    def test_update_with_kwargs(self):
+        """Testing the method update with kwargs"""
+        obj = Square(3, 10, 10, 10)
+        obj.update(id=11, size=5, x=9, y=12)
+        self.assertEqual(obj.id, 11)
+        self.assertEqual(obj.size, 5)
+        self.assertEqual(obj.x, 9)
+        self.assertEqual(obj.y, 12)
+        obj.update(size=30, x=10, y=2)
+        self.assertEqual(obj.id, 11)
+        self.assertEqual(obj.size, 30)
+        self.assertEqual(obj.x, 10)
+        self.assertEqual(obj.y, 2)
+
+    def test_update_with_dictionnary(self):
+        """Testing the method update with dictionary"""
+        obj = Square(3, 10, 10, 10)
+        obj.update(**{'id': 89})
+        self.assertEqual(obj.id, 89)
+        obj.update(**{'id': 89, 'size': 1})
+        self.assertEqual(obj.id, 89)
+        self.assertEqual(obj.size, 1)
+        obj.update(**{'id': 89, 'size': 2})
+        self.assertEqual(obj.id, 89)
+        self.assertEqual(obj.size, 2)
+        obj.update(**{'id': 89, 'size': 2, 'x': 3})
+        self.assertEqual(obj.id, 89)
+        self.assertEqual(obj.size, 2)
+        self.assertEqual(obj.x, 3)
+        obj.update(**{'id': 89, 'size': 2, 'x': 3, 'y': 4})
+        self.assertEqual(obj.id, 89)
+        self.assertEqual(obj.size, 2)
+        self.assertEqual(obj.x, 3)
+        self.assertEqual(obj.y, 4)
+
     def test_to_dictionary(self):
         """Testing the method to_dictionary"""
         obj = Square(10, 2, 1, 9)
