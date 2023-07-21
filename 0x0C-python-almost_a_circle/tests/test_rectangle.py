@@ -19,21 +19,34 @@ class TestRectangle(unittest.TestCase):
 
     def test_attributes_validation(self):
         """Testing tracebacks for attributes"""
+        """----WIDTH----"""
         with self.assertRaises(TypeError) as traceback:
             instance = Rectangle("h", 2)
         self.assertEqual(str(traceback.exception), "width must be an integer")
+        with self.assertRaises(ValueError) as traceback:
+            instance = Rectangle(-1, 2)
+        self.assertEqual(str(traceback.exception), "width must be > 0")
+        with self.assertRaises(ValueError) as traceback:
+            instance = Rectangle(0, 2)
+        self.assertEqual(str(traceback.exception), "width must be > 0")
+        """----HEIGHT----"""
         with self.assertRaises(TypeError) as traceback:
             instance = Rectangle(1, "h")
         self.assertEqual(str(traceback.exception), "height must be an integer")
         with self.assertRaises(ValueError) as traceback:
-            instance = Rectangle(-1, 2)
-        self.assertEqual(str(traceback.exception), "width must be > 0")
+            instance = Rectangle(1, -2)
+        self.assertEqual(str(traceback.exception), "height must be > 0")
+        with self.assertRaises(ValueError) as traceback:
+            instance = Rectangle(1, 0)
+        self.assertEqual(str(traceback.exception), "height must be > 0")
+        """----X----"""
         with self.assertRaises(TypeError) as traceback:
-            instance = Rectangle(1, 2, "w")
+            instance = Rectangle(1, 2, "d", 1)
         self.assertEqual(str(traceback.exception), "x must be an integer")
         with self.assertRaises(ValueError) as traceback:
             instance = Rectangle(1, 2, -1)
         self.assertEqual(str(traceback.exception), "x must be >= 0")
+        """----Y----"""
         with self.assertRaises(TypeError) as traceback:
             instance = Rectangle(1, 2, 1, "d")
         self.assertEqual(str(traceback.exception), "y must be an integer")
