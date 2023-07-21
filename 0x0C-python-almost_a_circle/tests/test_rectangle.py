@@ -114,6 +114,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(obj.height, 30)
         self.assertEqual(obj.x, 10)
         self.assertEqual(obj.y, 2)
+
+    def test_update_with_dictionnary(self):
+        """Testing the method update with dictionary"""
+        obj = Rectangle(3, 10, 10, 10, 10)
         obj.update(**{'id': 89})
         self.assertEqual(obj.id, 89)
         obj.update(**{'id': 89, 'width': 1})
@@ -128,7 +132,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(obj.width, 1)
         self.assertEqual(obj.height, 2)
         self.assertEqual(obj.x, 3)
-        obj.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        obj.update(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
         self.assertEqual(obj.id, 89)
         self.assertEqual(obj.width, 1)
         self.assertEqual(obj.height, 2)
