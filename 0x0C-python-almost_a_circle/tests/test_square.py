@@ -4,6 +4,7 @@
 from models.base import Base
 from models.square import Square
 import unittest
+from unittest.mock import patch
 
 
 class TestSquare(unittest.TestCase):

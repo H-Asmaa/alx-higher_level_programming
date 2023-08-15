@@ -2,6 +2,7 @@
 """ My class module
 """
 
+
 class Student:
     """ My class
     """
@@ -12,3 +13,6 @@ class Student:
 
     def __str__(self):
         return "[MyClass] {} - {:d}".format(self.name, self.number)
+
+    def to_json(self, attrs=None):
+        

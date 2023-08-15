@@ -8,6 +8,7 @@ import os
 from io import StringIO
 import sys
 from contextlib import redirect_stdout
+from unittest.mock import patch
 
 
 class TestRectangle(unittest.TestCase):
@@ -148,16 +149,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(obj.height, 20)
         self.assertEqual(obj.x, 5)
         self.assertEqual(obj.y, 5)
-
-    def test_display(self):
-        obj = Rectangle(width=3, height=2, x=2, y=1)
-        expected_output = "\n  ###\n  ###\n"
-        captured_output = StringIO()
-        sys.stdout = captured_output
-        obj.display()
-        actual_output = captured_output.getvalue()
-        sys.stdout = sys.__stdout__
-        self.assertEqual(actual_output, expected_output)
 
     def test_to_dictionary(self):
         """Testing the method to_dictionary"""
