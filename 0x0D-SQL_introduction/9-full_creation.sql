@@ -1,4 +1,4 @@
--- A script that creates a table second_table in the database hbtn_0c_0 with attributes.
+-- A script that creates a table second_table in the database hbtn_0c_0.
 CREATE TABLE IF NOT EXISTS second_table(
 	id int,
 	name VARCHAR (256),
