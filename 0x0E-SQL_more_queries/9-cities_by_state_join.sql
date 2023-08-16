@@ -1,5 +1,5 @@
 -- A script that lists all cities contained in the database hbtn_0d_usa.
-SELECT cities.id, cities.name, state_name(
+SELECT cities.id, cities.name, (
 	SELECT states.name
 	FROM states
 	WHERE states.id = cities.states_id
