@@ -1,24 +1,22 @@
 #!/usr/bin/node
 function secondBiggest (list) {
-  let first = -1;
-  let second = -1;
+  let first = -Infinity;
+  let second = -Infinity;
   for (const i of list) {
-    if (first < i) {
-      second = first;
-      first = i;
-    } else if (second < i && first > i) {
-      second = i;
+    if (!isNaN(Number(i))) {
+      if (first < Number(i)) {
+        second = first;
+        first = Number(i);
+      } else if (second < Number(i) && first !== Number(i)) {
+        second = Number(i);
+      }
     }
   }
   return second;
 }
 const args = process.argv.slice(2);
-let res = 0;
-if (!args[0]) {
-  console.log(0);
-} else if (args.length === 1) {
+if (!args[0] || args.length === 1) {
   console.log(0);
 } else {
-  res = secondBiggest(args);
-  console.log(res);
+  console.log(secondBiggest(args));
 }
