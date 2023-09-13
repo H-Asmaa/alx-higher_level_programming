@@ -1,4 +1,4 @@
-#!/usr/bin/n
+#!/usr/bin/node
 module.exports = {
   addMeMaybe: function (nb, func) {
     nb++;
