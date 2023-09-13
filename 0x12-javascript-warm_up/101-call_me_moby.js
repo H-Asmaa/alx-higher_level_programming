@@ -1,11 +1,12 @@
-#!/usr/bin/no
+#!/usr/bin/nod
 function callMeMoby (x, theFunction) {
-	if (x <= 0) {
-	  return;
-	}
-	callMeMoby(x - 1, theFunction);
-	theFunction();
+  if (x >= 1) {
+    if (x > 1) {
+      callMeMoby(x - 1, theFunction);
+    }
+    theFunction();
   }
-  module.exports = {
-	callMeMoby
-  };
+}
+module.exports = {
+  callMeMoby
+};
