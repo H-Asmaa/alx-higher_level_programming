@@ -1,9 +1,8 @@
-#!/usr/bin/nod
-function callMeMoby(x, theFunction) {
-    for (let i = 0; i < x; i++) {
-        theFunction();
-    }
-}
+#!/usr/bin/node
 module.exports = {
-    callMeMoby
+  callMeMoby: function (x, theFunction) {
+    for (let i = 0; i < x; i++) {
+      theFunction();
+    }
+  }
 };
