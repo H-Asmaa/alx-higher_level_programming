@@ -1,7 +1,6 @@
-#!/usr/bin/no
+#!/usr/bin/nod
 function callMeMoby (x, theFunction) {
-  if (x > 0) {
-    callMeMoby(x - 1, theFunction);
+  for (let i = x; i > 0; i--) {
     theFunction();
   }
 }
