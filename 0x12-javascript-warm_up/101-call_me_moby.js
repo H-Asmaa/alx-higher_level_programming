@@ -1,8 +1,9 @@
-#!/usr/bin/node
+#!/usr/bin/no
 function callMeMoby (x, theFunction) {
-  if (x > 1) {
-    callMeMoby(x - 1, theFunction);
+  if (x <= 0) {
+    return;
   }
+  callMeMoby(x - 1, theFunction);
   theFunction();
 }
 module.exports = {
