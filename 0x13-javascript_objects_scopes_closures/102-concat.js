@@ -21,7 +21,6 @@ if (args.length === 3) {
       fs.writeFile(fileC, concate, 'utf-8', (err) => {
         if (err) {
           console.error('Erro writing to ' + fileC + ' : ' + err);
-          return;
         }
       });
     });
