@@ -25,14 +25,6 @@ if (args.length === 3) {
           console.error('Erro writing to ' + fileC + ' : ' + err);
           return;
         }
-
-        fs.readFile(fileC, 'utf-8', (err, data) => {
-          if (err) {
-            console.error('Error Reading from ' + fileC + ' : ' + err);
-            return;
-          }
-          console.log(data);
-        });
       });
     });
   });
