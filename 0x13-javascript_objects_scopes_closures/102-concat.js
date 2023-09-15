@@ -12,14 +12,12 @@ if (args.length === 3) {
       return;
     }
     concate += data;
-    concate += '\n';
     fs.readFile(fileB, 'utf-8', (err, data) => {
       if (err) {
         console.error('Error Reading from ' + fileB + ' : ' + err);
         return;
       }
       concate += data;
-
       fs.writeFile(fileC, concate, 'utf-8', (err) => {
         if (err) {
           console.error('Erro writing to ' + fileC + ' : ' + err);
