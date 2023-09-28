@@ -1,2 +1,3 @@
 #!/bin/bash
-curl -s -w "%{http_code}" "$1"
+# A script that sends a GET request to a URL
+curl -sL GET "$1"
