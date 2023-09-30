@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# A script that finds the peak
+""" A script that finds the peak """
 
 
 def find_peak(list_of_integers):
