@@ -7,11 +7,14 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    q = argv[1]
+    if argv:
+        q = argv[1]
+    else:
+        q = ""
     response = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
     try:
         content = response.json()
-        if (content):
+        if content:
             print("[{}] {}".format(content.get("id"), content.get("name")))
         else:
             print("No result")
