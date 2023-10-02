@@ -14,8 +14,10 @@ if __name__ == "__main__":
     response = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
     try:
         content = response.json()
-        if content:
-            print("[{}] {}".format(content.get("id", ""), content.get("name", "")))
+        content_id = content.get("id", "")
+        content_name = content.get("name", "")
+        if content_id and content_name:
+            print("[{}] {}".format(content_id, content_name))
         else:
             print("No result")
     except ValueError:
