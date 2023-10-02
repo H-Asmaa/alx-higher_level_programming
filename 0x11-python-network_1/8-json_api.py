@@ -7,7 +7,7 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    if argv:
+    if argv > 1:
         q = argv[1]
     else:
         q = ""
