@@ -15,7 +15,7 @@ if __name__ == "__main__":
     try:
         content = response.json()
         if content:
-            print("[{}] {}".format(content.get("id"), content.get("name")))
+            print("[{:}] {:}".format(content.get("id"), content.get("name")))
         else:
             print("No result")
     except ValueError:
