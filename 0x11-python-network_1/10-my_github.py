@@ -9,4 +9,7 @@ password = argv[2]
 url = "https://api.github.com/user"
 info = {"login": argv[1]}
 response = requests.get(url, auth=(username, password), params=info).json()
-print("{}".format(response["id"]))
+if response.get('id') is not None:
+	print("{}".format(response.get('id')))
+else:
+	print("None")
