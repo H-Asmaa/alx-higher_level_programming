@@ -1,6 +1,7 @@
 #!/usr/bin/node
 /* A script that sends a get request to a url */
+const request = require('request');
 const url = process.argv.slice(2);
-fetch(url).then(response => {
-  console.log(response.status);
+request(url[0], (error, response, body) => {
+  console.log('code: ' + response.statusCode);
 });
