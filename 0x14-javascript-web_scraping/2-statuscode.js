@@ -3,5 +3,8 @@
 const request = require('request');
 const url = process.argv.slice(2);
 request(url[0], (error, response, body) => {
+  if (error) {
+    return;
+  }
   console.log('code: ' + response.statusCode);
 });
