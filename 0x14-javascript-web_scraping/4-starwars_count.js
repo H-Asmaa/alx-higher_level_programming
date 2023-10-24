@@ -1,6 +1,6 @@
 #!/usr/bin/node
-/*A script that calculates the number of occurences
-of the character Wedge Antilles that has the ID 8.*/
+/* A script that calculates the number of occurences
+of the character Wedge Antilles that has the ID 8. */
 const request = require('request');
 const url = process.argv.slice(2);
 let counter = 0;
