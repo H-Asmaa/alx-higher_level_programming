@@ -5,20 +5,17 @@ const request = require('request');
 request(url, (error, response, body) => {
   if (error) { return; }
   const data = JSON.parse(body);
-  let id = null; let counter;
   const usersTasks = {};
   if (!data || !data.length) {
     console.log(usersTasks);
     return;
   }
   for (const dict of data) {
-    if (dict.userId !== id) {
-      if (counter > 0) usersTasks[id] = counter;
-      id = dict.userId;
-      counter = 0;
+    const userId = dict.userId;
+    if (dict.completed) {
+      if (usersTasks[userId]) usersTasks[userId]++;
+      else usersTasks[userId] = 1;
     }
-    if (dict.completed) counter++;
   }
-  if (counter !== 0) usersTasks[id] = counter;
   console.log(usersTasks);
 });
