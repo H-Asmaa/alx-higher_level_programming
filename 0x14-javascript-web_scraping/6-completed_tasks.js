@@ -22,4 +22,3 @@ request(url, (error, response, body) => {
   if (counter !== 0) usersTasks[id] = counter;
   console.log(usersTasks);
 });
-
