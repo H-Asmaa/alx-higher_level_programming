@@ -7,7 +7,7 @@ request(url, (error, response, body) => {
   const data = JSON.parse(body);
   let id = null; let counter;
   const usersTasks = {};
-  if (!data) {
+  if (!data || !data.length) {
     console.log(usersTasks);
     return;
   }
