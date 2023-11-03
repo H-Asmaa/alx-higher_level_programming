@@ -5,6 +5,7 @@ depending on the language. */
 $(document).ready(function () {
   const url = 'https://hellosalut.stefanbohacek.dev/?lang=';
   function validateInput () {
+	$('#hello').empty();
     const lang = $('#language_code').val();
     $.get(url + lang, function (data) {
       $('#hello').append(data.hello);
